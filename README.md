@@ -27,7 +27,7 @@ $ source venv/bin/activate
 }
 ```
 
-4. RUn script
+4. Run script
 ```bash
 (venv) $ python3 chain_reg_browser.py
 ```
