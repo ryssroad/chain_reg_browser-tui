@@ -1,2 +1,2 @@
-# chain_reg_browser-tui
+# CHain Registry Browser TUI
 Cosmos Chain Registry Browser for command line.
