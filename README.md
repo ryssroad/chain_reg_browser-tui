@@ -31,3 +31,7 @@ $ source venv/bin/activate
 ```bash
 (venv) $ python3 chain_reg_browser.py
 ```
+
+![Chain Registry Browser Screenshot](screenshot.png)
+
+In case of any questions contact support@chaintools.tech
