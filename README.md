@@ -20,6 +20,12 @@ $ source venv/bin/activate
 (venv) $ python3 -m pip install -r requirements.txt
 ```
 
+if you want to run this on Windows install additional package:
+```bash
+pip install windows-curses
+```
+
+
 3. Update `config.json`
 ```json
 {
