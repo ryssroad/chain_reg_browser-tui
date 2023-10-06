@@ -7,8 +7,8 @@ read -p "Are you totally sure you wanna do this? (Y/n): " answer
 if [ "$answer" != "n" ]; then
     # Clone the repo
     echo "Nice! Cloning the repo..."
-    git clone https://github.com/ryssroad/testnet_chain_reg_browser-tui
-    cd testnet_chain_reg_browser-tui
+    # git clone https://github.com/ryssroad/testnet_chain_reg_browser-tui
+    # cd testnet_chain_reg_browser-tui
 
     # Create a virtual environment
     echo "Creating a virtual environment..."
@@ -20,6 +20,10 @@ if [ "$answer" != "n" ]; then
     pip install -r requirements.txt
 
     echo "Installation complete, bro!"
+    
+    # Run chain_reg_browser.py
+    echo "Launching the Chain Registry Browser..."
+    python chain_reg_browser.py
 else
     echo "Installation canceled, no worries, dude."
 fi
