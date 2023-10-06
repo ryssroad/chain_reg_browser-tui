@@ -27,12 +27,11 @@ if [ "$answer" != "n" ]; then
     if [ -n "$github_token" ]; then
     # Заменить значение GITHUB_TOKEN в файле config.json
     sed -i "s/\"GITHUB_TOKEN\": \".*\"/\"GITHUB_TOKEN\": \"$github_token\"/" config.json
-        echo "GITHUB_TOKEN успешно обновлен!"
+    echo "start it up ..."
+    python chain_reg_browser.py
     else
         echo "Пустое значение GITHUB_TOKEN. Обновление не выполнено."
     fi
-    
-    python chain_reg_browser.py
     else
     echo "Installation canceled, no worries, dude."
 fi
