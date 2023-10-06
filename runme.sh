@@ -8,7 +8,7 @@ if [ "$answer" != "n" ]; then
     # Clone the repo
     echo "Nice! Cloning the repo..."
     # git clone https://github.com/ryssroad/testnet_chain_reg_browser-tui
-    cd testnet_chain_reg_browser-tui
+    # cd testnet_chain_reg_browser-tui
 
     # Create a virtual environment
     echo "Creating a virtual environment..."
