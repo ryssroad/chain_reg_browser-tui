@@ -76,7 +76,7 @@ def load_chain_info():
     # Load token from configuration file
     # with open('config.json') as json_file:
     #    data = json.load(json_file)
-    TOKEN = "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"
+    TOKEN = "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"
 
     REPO = "cosmos/chain-registry"
     SUBDIRECTORY = "testnets"
