@@ -21,8 +21,9 @@ if [ "$answer" != "n" ]; then
 
     echo "Installation complete, bro!"
     
-    # Run chain_reg_browser.py
+    # Activate virtual environment and run chain_reg_browser.py
     echo "Launching the Chain Registry Browser..."
+    source venv/bin/activate
     python chain_reg_browser.py
 else
     echo "Installation canceled, no worries, dude."
