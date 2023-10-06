@@ -47,6 +47,6 @@ pip install windows-curses
 (venv) $ python3 chain_reg_browser.py
 ```
 
-![Chain Registry Browser Screenshot](screenshot.png)
+![Chain Registry Browser Screenshot](Screenshot.png)
 
 In case of any questions contact support@chaintools.tech
