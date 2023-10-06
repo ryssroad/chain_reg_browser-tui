@@ -26,18 +26,9 @@ def get_chain_info(subcontent, repo):
         website = chain_info.get('website')
         git_repo = chain_info.get('codebase', {}).get('git_repo')
         compatible_version = ', '.join(chain_info.get('codebase', {}).get('compatible_versions', []))
-        # roadz testnet impl.
-        # versions_recommended_version = versions[0].get('recommended_version') if versions else None
-        # Получение версии и совместимых версий
-        versions = chain_info.get('codebase', {}).get('versions', [])
-        if versions:
-            version = versions[0].get('name')
-            versions_compatible_version = ', '.join(versions[0].get('compatible_versions', []))
-        else:
-            version = None
-            versions_compatible_version = ""
-        # versions_compatible_version = ', '.join(chain_info.get('codebase', {}).get('versions', [{}])[0].get('compatible_versions', []))
-        versions_recommended_version = versions[0].get('recommended_version') if versions else None
+        version = chain_info.get('codebase', {}).get('versions', [{}])[0].get('name')
+        versions_recommended_version = chain_info.get('codebase', {}).get('versions', [{}])[0].get('recommended_version')
+        versions_compatible_version = ', '.join(chain_info.get('codebase', {}).get('versions', [{}])[0].get('compatible_versions', []))
         seeds = ', '.join([seed.get('address', '') for seed in chain_info.get('peers', {}).get('seeds', [])])
         persistent_peers = ', '.join([peer.get('address', '') for peer in chain_info.get('peers', {}).get('persistent_peers', [])])
         rpc = ', '.join([api.get('address', '') for api in chain_info.get('apis', {}).get('rpc', [])])
@@ -61,7 +52,6 @@ def get_chain_info(subcontent, repo):
             'compatible_version': compatible_version,
             'version': version,
             'versions_recommended_version': versions_recommended_version,
-
             'versions_compatible_version': versions_compatible_version,
             'seeds': seeds,
             'persistent_peers': persistent_peers,
@@ -76,18 +66,14 @@ def load_chain_info():
     # Load token from configuration file
     with open('config.json') as json_file:
         data = json.load(json_file)
-    # TOKEN = data['GITHUB_TOKEN']
+    TOKEN = data['GITHUB_TOKEN']
 
     REPO = "cosmos/chain-registry"
-    SUBDIRECTORY = "testnets"
 
-    # github = Github(TOKEN)
-    repo = REPO
-    # repo = github.get_repo(REPO)
+    github = Github(TOKEN)
+    repo = github.get_repo(REPO)
 
-    contents = repo.get_contents(SUBDIRECTORY)
-
-    # contents = repo.get_contents("")
+    contents = repo.get_contents("")
     chain_info_list = []
 
     with concurrent.futures.ThreadPoolExecutor() as executor:
