@@ -23,14 +23,14 @@ if [ "$answer" != "n" ]; then
     
     # Activate virtual environment and run chain_reg_browser.py
     echo "Launching the Chain Registry Browser..."
-    read -p "Введите GITHUB_TOKEN (https://github.com/settings/tokens): " github_token
+    read -p "enter GITHUB_TOKEN (https://github.com/settings/tokens): " github_token
     if [ -n "$github_token" ]; then
-    # Заменить значение GITHUB_TOKEN в файле config.json
+    
     sed -i "s/\"GITHUB_TOKEN\": \".*\"/\"GITHUB_TOKEN\": \"$github_token\"/" config.json
     echo "start it up ..."
     python chain_reg_browser.py
     else
-        echo "Пустое значение GITHUB_TOKEN. Обновление не выполнено."
+        echo "empty GITHUB_TOKEN cancelling"
     fi
     else
     echo "Installation canceled, no worries, dude."
