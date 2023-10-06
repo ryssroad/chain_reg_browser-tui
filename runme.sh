@@ -23,7 +23,7 @@ if [ "$answer" != "n" ]; then
     
     # Activate virtual environment and run chain_reg_browser.py
     echo "Launching the Chain Registry Browser..."
-    read -p "Введите GITHUB_TOKEN [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] (https://github.com/settings/tokens): " github_token
+    read -p "Введите GITHUB_TOKEN (https://github.com/settings/tokens): " github_token
     if [ -n "$github_token" ]; then
     # Заменить значение GITHUB_TOKEN в файле config.json
     sed -i "s/\"GITHUB_TOKEN\": \".*\"/\"GITHUB_TOKEN\": \"$github_token\"/" config.json
