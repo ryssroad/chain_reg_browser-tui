@@ -76,14 +76,14 @@ def load_chain_info():
     # Load token from configuration file
     with open('config.json') as json_file:
         data = json.load(json_file)
-    # TOKEN = data['GITHUB_TOKEN']
+    TOKEN = data['GITHUB_TOKEN']
 
     REPO = "cosmos/chain-registry"
     SUBDIRECTORY = "testnets"
 
-    # github = Github(TOKEN)
-    repo = REPO
-    # repo = github.get_repo(REPO)
+    github = Github(TOKEN)
+    # repo = REPO
+    repo = github.get_repo(REPO)
 
     contents = repo.get_contents(SUBDIRECTORY)
 
